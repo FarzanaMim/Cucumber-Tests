@@ -1,6 +1,6 @@
 require 'rspec/expectations'
 
-module KnowsMyAccount
+module Helpers
   def my_account
     @my_account ||= Account.new
   end
@@ -14,7 +14,7 @@ module KnowsMyAccount
   end
 end
 
-World(KnowsMyAccount)
+World(Helpers)
 
 Given(/^I have deposited (#{CAPTURE_CASH_AMOUNT}) in my account$/) do |amount|
   my_account.deposit(amount)
