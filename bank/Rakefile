@@ -1,0 +1,10 @@
+require 'cucumber/rake/task'
+
+
+desc 'Run all features'
+
+namespace :features do
+  Cucumber::Rake::Task.new(:features) do |t|
+    t.cucumber_opts = 'features -f pretty -f html --out output.html'
+  end
+end
