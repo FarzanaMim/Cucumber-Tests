@@ -16,10 +16,6 @@ end
 
 World(KnowsMyAccount)
 
-CAPTURE_CASH_AMOUNT = Transform /^\d+$/ do |number|
-  number.to_i
-end
-
 Given(/^I have deposited (#{CAPTURE_CASH_AMOUNT}) in my account$/) do |amount|
   my_account.deposit(amount)
   expect(my_account.balance).to eq(amount)
